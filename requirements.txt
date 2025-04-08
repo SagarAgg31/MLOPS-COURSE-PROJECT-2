@@ -11,4 +11,5 @@ scikit-learn
 comet-ml
 dotenv
 dvc
+dvc-gs
 ## C:\Users\Sagar\Downloads\ace-wording-455116-q0-d134b6ddc061.json
