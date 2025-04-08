@@ -1,0 +1,34 @@
+2025-04-08 12:52:15,943 - INFO - Output directory created at artifacts/processed
+2025-04-08 12:52:15,944 - INFO - Data processing intialized
+2025-04-08 12:52:16,080 - INFO - Data loaded from artifacts/raw/animelist.csv
+2025-04-08 12:52:16,111 - INFO - Filteres users sucessfully....
+2025-04-08 12:52:16,188 - INFO - Scaled ratings successfully....
+2025-04-08 12:52:16,210 - INFO - Encoded data successfully for users and anime..... 
+2025-04-08 12:52:16,254 - INFO - Data split successfully into train and test set
+2025-04-08 12:52:16,257 - INFO - Saved user2user_encoded artifacts successfully
+2025-04-08 12:52:16,260 - INFO - Saved user2user_decoded artifacts successfully
+2025-04-08 12:52:16,278 - INFO - Saved anime2anime_encoded artifacts successfully
+2025-04-08 12:52:16,298 - INFO - Saved anime2anime_decoded artifacts successfully
+2025-04-08 12:52:16,649 - INFO - Saved all artifacts successfully
+2025-04-08 12:52:16,649 - INFO - Reading anime data from artifacts/raw/anime.csv
+2025-04-08 12:52:16,778 - INFO - Reading anime synopsis from artifacts/raw/anime_with_synopsis.csv
+2025-04-08 12:52:16,954 - INFO - Processing anime data...
+2025-04-08 12:52:21,197 - INFO - Anime data processed successfully
+2025-04-08 12:52:21,272 - INFO - Anime data saved to artifacts/processed\anime_df.csv
+2025-04-08 12:52:21,379 - INFO - Anime synopsis data saved to artifacts/processed\synopsis_df.csv
+2025-04-08 12:52:21,379 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
+2025-04-08 12:52:21,382 - INFO - Data processing completed successfully
+2025-04-08 12:52:21,585 - WARNING - Rate-limited via x-sentry-rate-limits
+2025-04-08 12:52:30,266 - INFO - Model training & COMET-ML intialized...
+2025-04-08 12:52:30,278 - INFO - Data loaded successfully for Model Training
+2025-04-08 12:52:30,289 - INFO - The yaml file has been read successfully!
+2025-04-08 12:52:30,289 - INFO - Loaded configuration from config.yaml
+2025-04-08 12:52:30,423 - INFO - Model created successfully......
+2025-04-08 12:52:35,284 - INFO - Model training completed successfully
+2025-04-08 12:52:35,284 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-04-08 12:52:35,316 - INFO - Model saved successfully
+2025-04-08 12:52:35,319 - INFO - Extracted weights from layer user_embedding successfully
+2025-04-08 12:52:35,319 - INFO - Shape of weights: (426, 128)
+2025-04-08 12:52:35,326 - INFO - Extracted weights from layer anime_embedding successfully
+2025-04-08 12:52:35,326 - INFO - Shape of weights: (12689, 128)
+2025-04-08 12:52:35,388 - INFO - Weights saved successfully

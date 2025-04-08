@@ -1,0 +1,9 @@
+2025-04-07 20:51:51,183 - INFO - Model training intialized...
+2025-04-07 20:51:51,200 - INFO - Data loaded successfully for Model Training
+2025-04-07 20:51:51,223 - INFO - The yaml file has been read successfully!
+2025-04-07 20:51:51,223 - INFO - Loaded configuration from config.yaml
+2025-04-07 20:51:51,414 - INFO - Model created successfully......
+2025-04-07 20:52:10,710 - INFO - Model training completed successfully
+2025-04-07 20:52:10,710 - ERROR - Error saving model: Invalid filepath extension for saving. Please add either a `.keras` extension for the native Keras format (recommended) or a `.h5` extension. Use `model.export(filepath)` if you want to export a SavedModel for use with TFLite/TFServing/etc. Received: filepath=artifacts/model.
+2025-04-07 20:52:10,710 - ERROR - Error during model training: name 'sys' is not defined
+2025-04-07 20:52:10,710 - ERROR - Error in training model: name 'sys' is not defined

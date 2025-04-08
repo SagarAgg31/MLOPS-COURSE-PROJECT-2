@@ -1,0 +1,9 @@
+2025-04-07 20:52:36,196 - INFO - Model training intialized...
+2025-04-07 20:52:36,206 - INFO - Data loaded successfully for Model Training
+2025-04-07 20:52:36,227 - INFO - The yaml file has been read successfully!
+2025-04-07 20:52:36,227 - INFO - Loaded configuration from config.yaml
+2025-04-07 20:52:36,328 - INFO - Model created successfully......
+2025-04-07 20:52:42,295 - INFO - Model training completed successfully
+2025-04-07 20:52:42,295 - ERROR - Error saving model: Invalid filepath extension for saving. Please add either a `.keras` extension for the native Keras format (recommended) or a `.h5` extension. Use `model.export(filepath)` if you want to export a SavedModel for use with TFLite/TFServing/etc. Received: filepath=artifacts/model.
+2025-04-07 20:52:42,328 - ERROR - Error during model training: Error in C:\Users\Sagar\Music\Advanced Mlops\MLOPS-PROJECT-2\src\model_training.py , line 120 : Error saving model
+2025-04-07 20:52:42,328 - ERROR - Error in training model: Error in C:\Users\Sagar\Music\Advanced Mlops\MLOPS-PROJECT-2\src\model_training.py , line 99 : Error during model training

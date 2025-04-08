@@ -1,0 +1,15 @@
+2025-04-08 10:28:51,567 - INFO - Model training intialized...
+2025-04-08 10:28:51,567 - INFO - Data loaded successfully for Model Training
+2025-04-08 10:28:51,585 - INFO - The yaml file has been read successfully!
+2025-04-08 10:28:51,585 - INFO - Loaded configuration from config.yaml
+2025-04-08 10:28:51,642 - INFO - Model created successfully......
+2025-04-08 10:28:55,703 - INFO - Model training completed successfully
+2025-04-08 10:28:55,703 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-04-08 10:28:55,735 - INFO - Model saved successfully
+2025-04-08 10:28:55,735 - INFO - Extracted weights from layer user_embedding successfully
+2025-04-08 10:28:55,735 - INFO - Shape of weights: (426, 128)
+2025-04-08 10:28:55,735 - INFO - Extracted weights from layer anime_embedding successfully
+2025-04-08 10:28:55,735 - INFO - Shape of weights: (12689, 128)
+2025-04-08 10:28:55,735 - ERROR - Error saving model: [Errno 2] No such file or directory: 'artifacts/weights\\user_weights.pkl'
+2025-04-08 10:28:55,735 - ERROR - Error during model training: Error in C:\Users\Sagar\Music\Advanced Mlops\MLOPS-PROJECT-2\src\model_training.py , line 126 : Error saving model
+2025-04-08 10:28:55,735 - ERROR - Error in training model: Error in C:\Users\Sagar\Music\Advanced Mlops\MLOPS-PROJECT-2\src\model_training.py , line 99 : Error during model training
