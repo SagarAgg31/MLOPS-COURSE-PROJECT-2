@@ -1,6 +1,10 @@
 FROM python:3.8-slim
 
-# Set environment variables to prevent Python from writing .pyc files & Ensure Python output is not buffered
+# Accept API key at build time
+#ARG COMET_API_KEY
+#ENV COMET_API_KEY=${COMET_API_KEY}
+
+# Avoid .pyc files and enable unbuffered output
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
@@ -21,15 +25,15 @@ WORKDIR /app
 # Copy the application code
 COPY . .
 
-# Install dependencies from requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -e .
 
-# Train the model before running the application
+# Run training (will now have access to COMET_API_KEY)
+RUN pip install python-dotenv
 RUN python pipeline/training_pipeline.py
 
-# Expose the port that Flask will run on
+# Expose the port
 EXPOSE 5000
 
-# Command to run the app
+# Start the app
 CMD ["python", "application.py"]
-

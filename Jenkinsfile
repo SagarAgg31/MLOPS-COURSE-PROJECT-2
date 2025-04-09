@@ -6,6 +6,7 @@ pipeline{
         GCP_PROJECT = 'ace-wording-455116-q0'
         GCLOUD_PATH = "var/jenkins_home/google-cloud-sdk/bin"
         KUBECTL_AUTH_PLUGIN = "/usr/lib/google-cloud-sdk/bin"
+        
     }
 
     stages{
@@ -53,7 +54,8 @@ pipeline{
       stage("Build and push image to GCR"){
             steps{
                 script{
-                    withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
+                    withCredentials([file(credentialsId:'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS'),
+                    string(credentialsId: 'comet-api-key', variable: 'COMET_API_KEY')]) {
                         script{
                             echo 'Build and push image to GCR.....'
                             sh '''
@@ -61,8 +63,10 @@ pipeline{
                                 gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                                 gcloud config set project ${GCP_PROJECT}
                                 gcloud auth configure-docker --quiet
-                                docker build -t gcr.io/${GCP_PROJECT}/mlops-project:latest .
-                                docker push gcr.io/${GCP_PROJECT}/mlops-project:latest 
+                                cp .env docker/.env
+
+                                docker build --build-arg COMET_API_KEY=${env.COMET_API_KEY} -t gcr.io/${GCP_PROJECT}/mlops-project:latest .
+                                docker push gcr.io/${GCP_PROJECT}/mlops-project:latest
                                 '''
                                 }
                             }
