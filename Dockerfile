@@ -1,10 +1,8 @@
-ARG COMET_API_KEY
-ENV COMET_API_KEY=${COMET_API_KEY}
-
 FROM python:3.8-slim
 
 # Accept API key at build time
-
+ARG COMET_API_KEY
+ENV COMET_API_KEY=${COMET_API_KEY}
 # Avoid .pyc files and enable unbuffered output
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
