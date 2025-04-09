@@ -5,7 +5,6 @@ artifacts/model/
 artifacts/weights/
 artifacts/model_checkpoint/
 MLOPS_PROJECT_2.egg-info/
-.secrets/ace-wording-455116-q0-d134b6ddc061.json/
 test_gcp.py/
 try.py/
 .env
