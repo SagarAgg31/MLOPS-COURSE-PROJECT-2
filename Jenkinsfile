@@ -63,7 +63,7 @@ pipeline {
 
                         echo "Building Docker image..."                    
                         docker build --build-arg COMET_API_KEY=${COMET_API_KEY} -t ${IMAGE_NAME} .
-                        
+
                         echo "Pushing Docker image..."
                         docker push ${IMAGE_NAME}
                     """
@@ -77,15 +77,18 @@ pipeline {
                     echo 'Deploying to Kubernetes...'
                     sh """
                         export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
+                        export HOME=/var/jenkins_home
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                         gcloud config set project ${GCP_PROJECT}
                         gcloud container clusters get-credentials ml-app-cluster --region us-central1
+
+                        echo "Current K8s context:"
+                        kubectl config current-context
 
                         kubectl apply -f deployment.yaml
                     """
                 }
             }
         }
-
     }
 }
