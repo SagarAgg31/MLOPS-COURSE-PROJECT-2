@@ -54,14 +54,17 @@ pipeline {
                     file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS'),
                     string(credentialsId: 'COMET_API_KEY', variable: 'COMET_API_KEY')
                 ]) {
-                    echo 'Building and pushing Docker image to GCR...'
                     sh """
+                        echo "Authenticating with GCP..."
                         export PATH=$PATH:${GCLOUD_PATH}
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                         gcloud config set project ${GCP_PROJECT}
                         gcloud auth configure-docker --quiet
-                        
+
+                        echo "Building Docker image..."                    
                         docker build --build-arg COMET_API_KEY=${COMET_API_KEY} -t ${IMAGE_NAME} .
+                        
+                        echo "Pushing Docker image..."
                         docker push ${IMAGE_NAME}
                     """
                 }
